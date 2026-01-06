@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "format": "biome format --write",
+    "lint": "biome lint --write",
+    "fix": "pnpm lint && pnpm format",
     "preview": "vite preview"
   },
   "dependencies": {
