@@ -1,5 +1,7 @@
+import { MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { createFileRoute } from '@tanstack/react-router';
 
+import { IconButton } from '@/components/ui/icon-button';
 import { Button } from '../components/ui/button';
 
 function Components() {
@@ -18,8 +20,8 @@ function Components() {
       <div className="flex flex-col gap-2">
         <span className="text-gray-100">Icon Button</span>
         <div className="flex flex-row items-center justify-center gap-10 rounded border border-gray-200 border-dashed p-6">
-          <Button title="Click Me" className="w-full" />
-          <Button title="Click Me" className="w-full" disabled />
+          <IconButton icon={MagnifyingGlassIcon} />
+          <IconButton icon={MagnifyingGlassIcon} disabled />
         </div>
       </div>
 
