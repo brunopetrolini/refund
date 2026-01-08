@@ -1,5 +1,6 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 
+import { Button } from '@/components/ui/button';
 import { Route as componentsPage } from './components';
 
 function Index() {
@@ -7,13 +8,10 @@ function Index() {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <button
-        type="button"
-        className="cursor-pointer rounded-lg border-2 border-green-100 bg-green-100 p-3 font-bold text-white transition-all duration-150 hover:border-green-200"
+      <Button
         onClick={() => navigate({ to: componentsPage.to })}
-      >
-        Go to Components Page
-      </button>
+        title="Go to Components Page"
+      />
     </div>
   );
 }
