@@ -1,7 +1,42 @@
 import { MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { createFileRoute } from '@tanstack/react-router';
 
+import { RefundsList } from '@/components/refunds-list';
 import { IconButton } from '@/components/ui/icon-button';
+import type { Refund } from '@/types/refund';
+
+const refunds: Refund[] = [
+  {
+    id: 1,
+    title: 'Almoço',
+    category: 'food',
+    amount: 50,
+  },
+  {
+    id: 2,
+    title: 'Uber',
+    category: 'transport',
+    amount: 30,
+  },
+  {
+    id: 3,
+    title: 'Aluguel',
+    category: 'housing',
+    amount: 1200,
+  },
+  {
+    id: 4,
+    title: 'Internet',
+    category: 'services',
+    amount: 100,
+  },
+  {
+    id: 5,
+    title: 'Outros',
+    category: 'other',
+    amount: 200,
+  },
+];
 
 function Index() {
   return (
@@ -19,6 +54,12 @@ function Index() {
       </div>
 
       <div className="h-px w-full rounded-full bg-gray-300" />
+
+      <RefundsList.List>
+        {refunds.map((refund) => (
+          <RefundsList.Item key={refund.id} refund={refund} />
+        ))}
+      </RefundsList.List>
     </div>
   );
 }

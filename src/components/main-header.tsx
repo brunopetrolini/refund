@@ -1,6 +1,6 @@
 import { Link, useLocation } from '@tanstack/react-router';
 
-import RefundLogo from '@/assets/logo.svg?react';
+import RefundLogo from '@/assets/images/logo.svg?react';
 import { Button } from './ui/button';
 import { NavLink } from './ui/nav-link';
 
