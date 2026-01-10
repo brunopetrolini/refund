@@ -2,10 +2,10 @@ import type { ComponentProps } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 const navLinkVariants = tv({
-  base: 'px-5 py-3 font-semibold text-gray-200 text-sm transition-colors duration-200 hover:text-green-200 ',
+  base: 'px-5 py-3 font-semibold text-gray-200 text-sm transition-colors duration-200 hover:text-green-200 cursor-pointer',
   variants: {
     selected: {
-      true: 'text-green-100 hover:text-green-100',
+      true: 'text-green-100 hover:text-green-100 pointer-events-none',
     },
   },
   defaultVariants: {
