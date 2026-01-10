@@ -4,11 +4,18 @@ import { createFileRoute } from '@tanstack/react-router';
 import { IconButton } from '@/components/ui/icon-button';
 import { InputText } from '@/components/ui/input-text';
 import { NavLink } from '@/components/ui/nav-link';
+import { Select } from '@/components/ui/select';
 import { Button } from '../components/ui/button';
+
+const selectOptions = [
+  { label: 'Option 1', value: 'option1' },
+  { label: 'Option 2', value: 'option2' },
+  { label: 'Option 3', value: 'option3' },
+];
 
 function Components() {
   return (
-    <div className="flex flex-col items-center gap-10 p-10">
+    <div className="grid grid-cols-2 gap-10 p-10">
       {/* Button Section */}
       <div className="flex flex-col gap-2">
         <span className="text-gray-100">Button</span>
@@ -55,12 +62,7 @@ function Components() {
       <div className="flex flex-col gap-2">
         <span className="text-gray-100">Select</span>
         <div className="flex flex-row items-center justify-center gap-10 rounded border border-gray-200 border-dashed p-6">
-          <Button
-            title="Click Me"
-            className="w-full"
-            onClick={() => alert('Clicked Button')}
-          />
-          <Button title="Click Me" className="w-full" disabled />
+          <Select title="categoria" name="categoria" values={selectOptions} />
         </div>
       </div>
     </div>
