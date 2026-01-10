@@ -9,7 +9,7 @@ interface IconButtonProps
 }
 
 const iconButtonVariants = tv({
-  base: 'flex items-center justify-center rounded-lg p-3 bg-green-100 hover:bg-green-200 transition-colors duration-200',
+  base: 'flex items-center justify-center rounded-lg p-3 bg-green-100 hover:bg-green-200 transition-colors duration-200 cursor-pointer',
   variants: {
     disabled: {
       true: 'opacity-50 cursor-not-allowed hover:bg-green-100',
