@@ -1,4 +1,3 @@
-import { Link } from '@tanstack/react-router';
 import type { ComponentProps } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
@@ -15,15 +14,15 @@ const navLinkVariants = tv({
 });
 
 interface NavLinkProps
-  extends ComponentProps<typeof Link>,
+  extends ComponentProps<'a'>,
     VariantProps<typeof navLinkVariants> {
   title: string;
 }
 
 export function NavLink({ title, selected, ...props }: NavLinkProps) {
   return (
-    <Link className={navLinkVariants({ selected })} {...props}>
+    <a className={navLinkVariants({ selected })} {...props}>
       {title}
-    </Link>
+    </a>
   );
 }
