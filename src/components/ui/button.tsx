@@ -22,12 +22,14 @@ export function Button({
   disabled,
   className,
   type = 'button',
+  ...props
 }: ButtonProps) {
   return (
     <button
       type={type}
       className={buttonVariants({ disabled, className })}
       disabled={disabled}
+      {...props}
     >
       <span className="font-bold text-sm text-white">{title}</span>
     </button>
