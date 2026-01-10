@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { IconButton } from '@/components/ui/icon-button';
 import { InputText } from '@/components/ui/input-text';
+import { NavLink } from '@/components/ui/nav-link';
 import { Button } from '../components/ui/button';
 
 function Components() {
@@ -45,12 +46,8 @@ function Components() {
       <div className="flex flex-col gap-2">
         <span className="text-gray-100">NavLink</span>
         <div className="flex flex-row items-center justify-center gap-10 rounded border border-gray-200 border-dashed p-6">
-          <Button
-            title="Click Me"
-            className="w-full"
-            onClick={() => alert('Clicked Button')}
-          />
-          <Button title="Click Me" className="w-full" disabled />
+          <NavLink title="Link" />
+          <NavLink title="Link" selected />
         </div>
       </div>
 
