@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as NewRefundRouteImport } from './routes/new-refund'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as IndexRouteImport } from './routes/index'
 
+const NewRefundRoute = NewRefundRouteImport.update({
+  id: '/new-refund',
+  path: '/new-refund',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComponentsRoute = ComponentsRouteImport.update({
   id: '/components',
   path: '/components',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRoute
+  '/new-refund': typeof NewRefundRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRoute
+  '/new-refund': typeof NewRefundRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/components': typeof ComponentsRoute
+  '/new-refund': typeof NewRefundRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/components'
+  fullPaths: '/' | '/components' | '/new-refund'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/components'
-  id: '__root__' | '/' | '/components'
+  to: '/' | '/components' | '/new-refund'
+  id: '__root__' | '/' | '/components' | '/new-refund'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComponentsRoute: typeof ComponentsRoute
+  NewRefundRoute: typeof NewRefundRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/new-refund': {
+      id: '/new-refund'
+      path: '/new-refund'
+      fullPath: '/new-refund'
+      preLoaderRoute: typeof NewRefundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/components': {
       id: '/components'
       path: '/components'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComponentsRoute: ComponentsRoute,
+  NewRefundRoute: NewRefundRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

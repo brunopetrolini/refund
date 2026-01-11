@@ -6,17 +6,24 @@ import { twMerge } from 'tailwind-merge';
 interface SelectProps extends RadixSelect.SelectProps {
   title: string;
   values: Array<{ label: string; value: string }>;
+  className?: string;
 }
 
-export function Select({ name, title, values, ...props }: SelectProps) {
+export function Select({
+  name,
+  title,
+  values,
+  className,
+  ...props
+}: SelectProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className={twMerge('flex flex-col gap-2', className)}>
       <label
         htmlFor={name}
         className={twMerge(
-          'font-bold text-[10px] text-gray-200 transition-colors duration-200',
+          'text-[10px] text-gray-200 transition-colors duration-200',
           isOpen && 'text-green-100',
         )}
       >
@@ -30,7 +37,7 @@ export function Select({ name, title, values, ...props }: SelectProps) {
       >
         <RadixSelect.Trigger
           className={twMerge(
-            'inline-flex w-48 justify-between gap-2 rounded-lg border border-gray-300 bg-gray-500 px-4 py-3.5 font-bold text-gray-100 text-sm outline-none transition-colors duration-200 data-placeholder:text-gray-200',
+            'inline-flex w-full justify-between gap-2 rounded-lg border border-gray-300 bg-gray-500 px-4 py-3.5 font-bold text-gray-100 text-sm outline-none transition-colors duration-200 data-placeholder:text-gray-200',
             isOpen && 'border-[1.5px] border-green-100',
           )}
         >

@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { Pagination } from '@/components/pagination';
 import { RefundsList } from '@/components/refunds-list';
+import { Card } from '@/components/ui/card';
 import { IconButton } from '@/components/ui/icon-button';
 import type { Refund } from '@/types/refund';
 
@@ -41,7 +42,7 @@ const refunds: Refund[] = [
 
 function Index() {
   return (
-    <div className="flex min-h-144 w-full max-w-5xl flex-col gap-6 rounded-2xl bg-gray-500 p-10">
+    <Card className="w-full flex-1">
       <h1 className="text-start font-bold text-gray-100 text-xl">
         Solicitações
       </h1>
@@ -63,7 +64,7 @@ function Index() {
       </RefundsList.List>
 
       <Pagination currentPage={1} totalPages={5} onPageChange={() => {}} />
-    </div>
+    </Card>
   );
 }
 
