@@ -9,7 +9,7 @@ interface ListProps {
 }
 
 function List({ children }: ListProps) {
-  return <div className="flex flex-col gap-4">{children}</div>;
+  return <div className="flex flex-1 flex-col gap-4">{children}</div>;
 }
 
 interface ItemProps {
@@ -18,7 +18,7 @@ interface ItemProps {
 
 function Item({ refund }: ItemProps) {
   return (
-    <div className="flex cursor-pointer flex-row items-center justify-between transition-transform duration-200 hover:translate-x-0.5">
+    <div className="flex cursor-pointer flex-row items-center justify-between transition-transform duration-200 hover:translate-x-1">
       <div className="inline-flex items-center gap-3">
         <CategoryIcon category={refund.category} />
         <div className="flex flex-col">

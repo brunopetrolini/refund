@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { createFileRoute } from '@tanstack/react-router';
 
+import { Pagination } from '@/components/pagination';
 import { RefundsList } from '@/components/refunds-list';
 import { IconButton } from '@/components/ui/icon-button';
 import type { Refund } from '@/types/refund';
@@ -60,6 +61,8 @@ function Index() {
           <RefundsList.Item key={refund.id} refund={refund} />
         ))}
       </RefundsList.List>
+
+      <Pagination currentPage={1} totalPages={5} onPageChange={() => {}} />
     </div>
   );
 }
